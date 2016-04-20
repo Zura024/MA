@@ -1,11 +1,11 @@
-package com.example.lakhs.movieapplication;
+package com.example.lakhs.movieapplication.models;
 
 import android.graphics.Bitmap;
 
 /**
- * Created by lakhs on 3/14/2016.
+ * Created by lakhs on 3/31/2016.
  */
-public class Movie {
+public class FavMovie {
     String title,year,rate,desc,rsc,id;
     Bitmap bitmap;
 

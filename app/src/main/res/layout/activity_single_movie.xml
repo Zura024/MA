@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context=".Activity.SingleMovieActivity">
+    tools:context=".activity.SingleMovieActivity">
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
@@ -21,14 +21,15 @@
                 android:layout_height="?attr/actionBarSize"
                 android:background="?attr/colorPrimary"
                 app:popupTheme="@style/AppTheme.PopupOverlay" >
-                <SearchView
-                    android:layout_width="280dp"
-                    android:layout_height="wrap_content"
-                    android:background="#400404"
-                    android:textColor="#290b0b"
-                    >
+                <ImageView
+                    android:paddingRight="0dp"
+                    android:layout_marginLeft="0dp"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:src="@drawable/icon"
+                    android:onClick="onClickBack"/>
 
-                </SearchView>
+
 
             </android.support.v7.widget.Toolbar>
         </android.support.design.widget.AppBarLayout>
@@ -48,15 +49,15 @@
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:text="title : mad max: fury road "
             android:id="@+id/tv_title"
-            android:textColor="#4b4747"
+            android:textColor="#212121"
             android:fontFamily="sans-serif-medium"
-            android:textStyle="normal|bold|italic"
+            android:textStyle="normal|italic"
             android:textSize="17dp"
             android:layout_marginTop="2dp"
             android:layout_toRightOf="@+id/iv_movie" />
         <TextView
             android:fontFamily="sans-serif-medium"
-            android:textStyle="normal|bold|italic"
+            android:textStyle="normal|italic"
             android:textSize="17dp"
             android:layout_below="@+id/tv_title"
             android:layout_width="wrap_content"
@@ -66,64 +67,63 @@
             android:layout_toRightOf="@+id/iv_movie"
             android:id="@+id/tv_year"
             android:layout_gravity="center"
-            android:layout_marginTop="28dp"
-            android:textColor="#4b4747"
+            android:layout_marginTop="20dp"
+            android:textColor="#212121"
             />
-        <TextView
-            android:fontFamily="sans-serif-medium"
-            android:textStyle="normal|bold|italic"
-            android:textSize="17dp"
+
+        <RatingBar
+            style = "?android:attr/ratingBarStyleIndicator"
             android:layout_below="@+id/tv_year"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceSmall"
-            android:text="IMDB Raiting : 7.19"
-            android:id="@+id/tv_rate"
-            android:textColor="#4b4747"
+            android:id="@+id/ratingBar"
             android:layout_toRightOf="@+id/iv_movie"
-            android:layout_marginTop="28dp"
-            />
+            android:layout_marginTop="24dp"
+            android:numStars="5"
+            android:rating="1"
+            android:stepSize="0.1" />
         <TextView
-            android:textColor="#4b4747"
-            android:fontFamily="sans-serif-medium"
+            android:textColor="#43A047"
+            android:fontFamily="sans-serif-large"
             android:textStyle="normal|bold|italic"
-            android:textSize="17dp"
+            android:textSize="20dp"
             android:layout_toRightOf="@+id/iv_movie"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/tv_rate"
+            android:layout_below="@+id/ratingBar"
             android:text="Add to Favorite"
             android:onClick="addFavorite"
             android:id="@+id/b_eddit"
-            android:layout_marginTop="28dp"
+            android:layout_marginTop="24dp"
             />
         <TextView
-            android:textColor="#4b4747"
+            android:textColor="#C62828"
             android:fontFamily="sans-serif-medium"
             android:textStyle="normal|bold|italic"
-            android:textSize="17dp"
+            android:textSize="20dp"
             android:layout_toRightOf="@+id/iv_movie"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/b_eddit"
             android:id="@+id/b_delete"
-            android:layout_marginTop="28dp"
+            android:layout_marginTop="24dp"
             android:text="Remove From Favorite"
             android:onClick="deleteFavorite"
             />
         <TextView
             android:fontFamily="sans-serif-thin"
             android:textStyle="normal|bold|italic"
-            android:textSize="17dp"
+            android:textSize="13dp"
             android:layout_below="@+id/iv_movie"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:text="Overview : After the cataclysmic events in New York with The Avengers, Steve Rogers, aka Captain America is living quietly in Washington, D.C. and trying to adjust to the modern world. But when a S.H.I.E.L.D. colleague comes under attack, Steve becomes embroiled in a web of intrigue that threatens to put the world at risk. Joining forces wi"
             android:id="@+id/tv_desc"
-            android:textColor="#4b4747"
+            android:textColor="#212121"
             android:layout_marginLeft="7dp"
             android:padding="4dp"/>
+
 
 
 

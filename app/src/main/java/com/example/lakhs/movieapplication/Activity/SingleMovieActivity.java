@@ -1,4 +1,4 @@
-package com.example.lakhs.movieapplication.Activity;
+package com.example.lakhs.movieapplication.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,10 +9,11 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.lakhs.movieapplication.MovieSQLiteOpenHelper;
+import com.example.lakhs.movieapplication.db.MovieSQLiteOpenHelper;
 import com.example.lakhs.movieapplication.R;
 import com.squareup.picasso.Picasso;
 
@@ -22,6 +23,7 @@ import com.squareup.picasso.Picasso;
 public class SingleMovieActivity extends AppCompatActivity {
     TextView title, year, rate, desc;
     ImageView imageView;
+    RatingBar rateBar;
     Button b;
     String mTitle,mYear,mRate,mDesc,mId,s;
     MovieSQLiteOpenHelper sql;
@@ -36,17 +38,20 @@ public class SingleMovieActivity extends AppCompatActivity {
         sql=new MovieSQLiteOpenHelper(this);
         title = (TextView) findViewById(R.id.tv_title);
         year = (TextView) findViewById(R.id.tv_year);
-        rate = (TextView) findViewById(R.id.tv_rate);
+        //rate = (TextView) findViewById(R.id.tv_rate);
         desc = (TextView) findViewById(R.id.tv_desc);
+        rateBar= (RatingBar) findViewById(R.id.ratingBar);
         imageView = (ImageView) findViewById(R.id.iv_movie);
         mTitle  =  getIntent().getStringExtra("title");
         mYear  =  getIntent().getStringExtra("year");
         mRate  =  getIntent().getStringExtra("rate");
         mDesc  =  getIntent().getStringExtra("desc");
         mId  =  getIntent().getStringExtra("id");
+        float f = (Float.parseFloat(getIntent().getStringExtra("rate")));
+        rateBar.setRating((float) (f/2.0));
         title.setText("Title : " + mTitle);
         year.setText("Date : " + mYear);
-        rate.setText("IMDB Rate " + mRate);
+        //rate.setText("IMDB Rate " + mRate);
         desc.setText("Description: " +mDesc);
         s = getIntent().getStringExtra("rsc");
         id = Integer.parseInt(mId);
@@ -58,15 +63,8 @@ public class SingleMovieActivity extends AppCompatActivity {
 
     }
 
-    public void onBackPressed() {
-        Intent i = new Intent(this, MainActivity.class);
-        startActivity(i);
-    }
-
     public void onClickBack(View v) {
-        Intent i = new Intent(this, MainActivity.class);
-        startActivity(i);
-
+        super.onBackPressed();
     }
 
     public void addFavorite(View v){

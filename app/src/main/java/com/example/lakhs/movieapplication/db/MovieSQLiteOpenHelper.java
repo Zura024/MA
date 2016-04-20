@@ -1,10 +1,12 @@
-package com.example.lakhs.movieapplication;
+package com.example.lakhs.movieapplication.db;
 
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+
+import com.example.lakhs.movieapplication.models.Movie;
 
 /**
  * Created by lakhs on 3/25/2016.

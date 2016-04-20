@@ -1,4 +1,4 @@
-package com.example.lakhs.movieapplication;
+package com.example.lakhs.movieapplication.adapters;
 
 import android.content.Context;
 import android.content.Intent;
@@ -8,7 +8,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
-import com.example.lakhs.movieapplication.Activity.SingleMovieActivity;
+import com.example.lakhs.movieapplication.R;
+import com.example.lakhs.movieapplication.activity.SingleMovieActivity;
+import com.example.lakhs.movieapplication.models.FavMovie;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;

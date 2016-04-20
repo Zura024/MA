@@ -11,7 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".Activity.MainActivity"
+            android:name=".activity.MainActivity"
             android:label=""
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -21,7 +21,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Activity.SingleMovieActivity"
+            android:name=".activity.SingleMovieActivity"
             android:label=""
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -30,7 +30,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>  <activity
-        android:name=".Activity.FavoriteActivity"
+        android:name=".activity.FavoriteActivity"
         android:label=""
         android:theme="@style/AppTheme.NoActionBar">
         <intent-filter>
